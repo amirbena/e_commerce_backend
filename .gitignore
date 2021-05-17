@@ -2,6 +2,12 @@
 /dist
 /node_modules
 
+#Enviroment
+*.yaml
+
+#Private key
+JwtKey.txt
+
 # Logs
 logs
 *.log
