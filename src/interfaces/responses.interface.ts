@@ -1,20 +1,32 @@
 import { HttpStatus } from "@nestjs/common";
 import { User } from "src/users/user.interface";
 
-export interface CreateUserResponse {
-    user: User;
+interface StatusAndMessage {
     status: HttpStatus;
     message: string;
 }
 
-export interface UserLoginResponse {
+export interface CreateUserResponse extends StatusAndMessage {
     user: User;
-    status: HttpStatus;
-    message: string;
 }
 
-export interface UserUpdateResponse{
+export interface UserLoginResponse extends StatusAndMessage {
     user: User;
-    status: HttpStatus;
-    message: string;
 }
+
+export interface UserUpdateResponse extends StatusAndMessage {
+    user: User;
+}
+
+export interface UserDeleteResponse extends StatusAndMessage {
+}
+
+export interface GetAllUsersResponse extends StatusAndMessage {
+    allUsers: User[]
+}
+
+export interface GetUserResponse extends StatusAndMessage {
+    user: User
+}
+
+export interface UpdateRoleResponse extends StatusAndMessage { }
